@@ -1,8 +1,10 @@
 package com.bearbaba.orginterface.bean;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author YangXiong
@@ -18,7 +20,19 @@ public class Role implements Serializable {
 	Long id;
 
 	/**
+	 * 角色名
+	 */
+	String name;
+
+	/**
+	 * 组织 id
+	 */
+	Long organizationId;
+
+	/**
 	 * 角色作用域
 	 */
-	Scope scope;
+	List<Scope> scopes;
+
+
 }

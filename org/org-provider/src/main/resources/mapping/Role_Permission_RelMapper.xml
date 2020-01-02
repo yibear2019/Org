@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bearbaba.orgprovider.mapper.Role_Permission_RelMapper">
+  <resultMap id="BaseResultMap" type="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="permission_id" jdbcType="BIGINT" property="permissionId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="permission_code" jdbcType="VARCHAR" property="permissionCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, permission_id, role_id, creat_time, update_time, permission_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    insert into org_role_permission_rel (id, permission_id, role_id, 
+      creat_time, update_time, permission_code
+      )
+    values (#{id,jdbcType=BIGINT}, #{permissionId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, 
+      #{creatTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{permissionCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    insert into org_role_permission_rel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="permissionId != null">
+        permission_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="creatTime != null">
+        creat_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="permissionCode != null">
+        permission_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="permissionId != null">
+        #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="permissionCode != null">
+        #{permissionCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    <set>
+      <if test="permissionId != null">
+        permission_id = #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="permissionCode != null">
+        permission_code = #{permissionCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    set permission_id = #{permissionId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
+      creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      permission_code = #{permissionCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="permission_id" jdbcType="BIGINT" property="permissionId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, permission_id, role_id, creat_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    insert into org_role_permission_rel (id, permission_id, role_id, 
+      creat_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{permissionId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, 
+      #{creatTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    insert into org_role_permission_rel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="permissionId != null">
+        permission_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="creatTime != null">
+        creat_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="permissionId != null">
+        #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    <set>
+      <if test="permissionId != null">
+        permission_id = #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    set permission_id = #{permissionId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
+      creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.bearbaba.orginterface.model.Role_Permission_Rel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="permission_id" jdbcType="BIGINT" property="permissionId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, permission_id, role_id, creat_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectByCode" resultType="com.bearbaba.orgprovider.model.Role_Permission_Rel">
+    select
+    <include refid="Base_Column_List" />
+    from org_role_permission_rel
+    where permission_code = #{permissionCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from org_role_permission_rel
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bearbaba.orginterface.model.Role_Permission_Rel">
+    insert into org_role_permission_rel (id, permission_id, role_id, 
+      creat_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{permissionId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, 
+      #{creatTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bearbaba.orginterface.model.Role_Permission_Rel">
+    insert into org_role_permission_rel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="permissionId != null">
+        permission_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="creatTime != null">
+        creat_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="permissionId != null">
+        #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bearbaba.orginterface.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    <set>
+      <if test="permissionId != null">
+        permission_id = #{permissionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="creatTime != null">
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bearbaba.orginterface.model.Role_Permission_Rel">
+    update org_role_permission_rel
+    set permission_id = #{permissionId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
+      creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

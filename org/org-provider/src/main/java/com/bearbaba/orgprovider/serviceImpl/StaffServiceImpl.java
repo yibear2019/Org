@@ -1,10 +1,12 @@
 package com.bearbaba.orgprovider.serviceImpl;
 
-import com.bearbaba.orginterface.bean.Staff;
 import com.bearbaba.orginterface.service.StaffService;
+import com.bearbaba.orgprovider.model.Staff;
 import com.bearbaba.orgprovider.mapper.StaffMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -22,8 +24,31 @@ public class StaffServiceImpl implements StaffService {
 	 * @return 员工id
 	 */
 	@Override
-	public int addStaff(Staff staff) {
-		return 0;
+	public int addStaff(com.bearbaba.orginterface.bean.Staff staff) {
+		Staff curStaff = new Staff();
+		convertToModel(staff,curStaff);
+		/**
+		 * todo
+		 * long 型主键插入,Mybatis返回 int
+		 */
+		int staffId = staffMapper.insert(curStaff);
+		return staffId;
+	}
+
+	private void convertToModel(com.bearbaba.orginterface.bean.Staff staff, Staff curStaff) {
+		if(staff == null || staff.getOrgId() == null ||
+		staff.getEnterpriseId() == null || staff.getName() == null ||
+		staff.getSex() == null || staff.getTelephoneNumber() == null){
+			return;
+		}
+
+		curStaff.setEnterpriseId(staff.getEnterpriseId());
+		curStaff.setOrgId(staff.getOrgId());
+		curStaff.setFreeze(false);
+		curStaff.setCreateTime(new Date());
+		curStaff.setName(staff.getName());
+		curStaff.setSex(staff.getSex());
+		curStaff.setTelephoneNumber(staff.getTelephoneNumber());
 	}
 
 	/**
@@ -33,8 +58,27 @@ public class StaffServiceImpl implements StaffService {
 	 * @return
 	 */
 	@Override
-	public boolean updateStaffInfo(Staff staff) {
-		return false;
+	public boolean updateStaffInfo(com.bearbaba.orginterface.bean.Staff staff) {
+		/**
+		 * todo
+		 * 参数校验考虑拆分为一个 before 模块来做
+		 */
+		if(staff == null){
+			return false;
+		}
+
+		Staff validation = staffMapper.selectByPrimaryKey(staff.getId());
+		if(validation == null){
+			return false;
+		}
+		if(!validation.getEnterpriseId().equals(staff.getEnterpriseId()) &&
+		!validation.getOrgId().equals(staff.getOrgId())){
+			return false;
+		}
+		Staff curStaff = staffMapper.selectByPrimaryKey(staff.getId());
+		convertToModel(staff,curStaff);
+		staffMapper.updateByPrimaryKey(curStaff);
+		return true;
 	}
 
 	/**
@@ -56,10 +100,26 @@ public class StaffServiceImpl implements StaffService {
 	 * @return
 	 */
 	@Override
-	public Staff getStaffInfo(Long staffId) {
+	public com.bearbaba.orginterface.bean.Staff getStaffInfo(Long staffId) {
 		Staff staff = staffMapper.selectByPrimaryKey(staffId);
-		System.out.println("根据 id " + staffId + " 获取成功,对应员工姓名: " + staff.getName());
-		return staff;
+		com.bearbaba.orginterface.bean.Staff dtoStaff = new com.bearbaba.orginterface.bean.Staff();
+		convertToDto(staff,dtoStaff);
+		return dtoStaff;
+	}
+
+	private void convertToDto(Staff staff, com.bearbaba.orginterface.bean.Staff dtoStaff) {
+		if(staff == null){
+			return;
+		}
+
+		dtoStaff.setEnterpriseId(staff.getEnterpriseId());
+		dtoStaff.setOrgId(staff.getOrgId());
+		dtoStaff.setFreeze(staff.getFreeze());
+		dtoStaff.setId(staff.getId());
+		dtoStaff.setIdCard(staff.getIdCard());
+		dtoStaff.setName(staff.getName());
+		dtoStaff.setSex(staff.getSex());
+		dtoStaff.setTelephoneNumber(staff.getTelephoneNumber());
 	}
 
 	/**
@@ -70,7 +130,13 @@ public class StaffServiceImpl implements StaffService {
 	 */
 	@Override
 	public boolean freeStaff(Long staffId) {
-		return false;
+		Staff staff = staffMapper.selectByPrimaryKey(staffId);
+		if(staff == null){
+			return false;
+		}
+		staff.setFreeze(true);
+		staffMapper.insert(staff);
+		return true;
 	}
 
 	/**
@@ -81,7 +147,13 @@ public class StaffServiceImpl implements StaffService {
 	 */
 	@Override
 	public boolean unfreezeStaff(Long id) {
-		return false;
+		Staff staff = staffMapper.selectByPrimaryKey(id);
+		if(staff == null){
+			return false;
+		}
+		staff.setFreeze(false);
+		staffMapper.updateByPrimaryKey(staff);
+		return true;
 	}
 
 	/**
@@ -92,7 +164,12 @@ public class StaffServiceImpl implements StaffService {
 	 */
 	@Override
 	public boolean deleteStaff(Long id) {
-		return false;
+		Staff staff = staffMapper.selectByPrimaryKey(id);
+		if(staff == null){
+			return false;
+		}
+		staffMapper.deleteByPrimaryKey(id);
+		return true;
 	}
 
 	/**
@@ -103,6 +180,17 @@ public class StaffServiceImpl implements StaffService {
 	 */
 	@Override
 	public boolean batchDeleteStaff(List<Long> id) {
-		return false;
+		for (Long curId : id) {
+			Boolean curFlag = deleteStaff(curId);
+			if (!curFlag) {
+				/**
+				 * todo
+				 * 此处应记录失败 ID 到日志中,并考虑是否采取回滚措施
+				 */
+
+				return false;
+			}
+		}
+		return true;
 	}
 }

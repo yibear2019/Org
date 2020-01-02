@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acbcb554-358d-48e8-867c-142fd1350428" name="Default Changelist" comment="" />
+    <list default="true" id="db3cad49-2d03-4c3c-8756-ff16be223774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Org.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-consumer/src/main/java/com/bearbaba/orgconsumer/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/mapper/Role_Permission_RelMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/model/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/model/Role_Permission_Rel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/serviceImpl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/resources/mapping/PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/resources/mapping/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org-provider/src/main/resources/mapping/Role_Permission_RelMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GrepConsole.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62a5d907-cfac-4939-bb01-20c0695e2d29.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-consumer/src/main/java/com/bearbaba/orgconsumer/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-consumer/src/main/java/com/bearbaba/orgconsumer/controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-interface/src/main/java/com/bearbaba/orginterface/bean/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orginterface/bean/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/model/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/mapper/StaffMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/mapper/StaffMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/serviceImpl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/src/main/java/com/bearbaba/orgprovider/serviceImpl/StaffServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org-provider/src/main/resources/mapping/StaffMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/org-provider/src/main/resources/mapping/StaffMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.iml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +58,16 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Mysql@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="yibear@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Mysql@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="yibear@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Mysql@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="yibear@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="bear_boh: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
@@ -41,12 +77,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="spring-beans.schema" />
-        <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -58,24 +99,32 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1VKLB2s7L6FWqE7AIeDNgzYEmBj" />
+  <component name="ProjectId" id="1Vk60TcyrUN6OSxGwapTl0oWiwX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/org-provider" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="project.structure.side.proportion" value="0.42691416" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -89,8 +138,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrgConsumerApplication">
-    <configuration name="MyBatis Generator" type="MavenRunConfiguration" factoryName="Maven">
+  <component name="RunManager" selected="Maven.Mybatis Generator">
+    <configuration name="Mybatis Generator" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -138,7 +187,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Maven.MyBatis Generator" />
+      <item itemvalue="Maven.Mybatis Generator" />
       <item itemvalue="Spring Boot.OrgConsumerApplication" />
       <item itemvalue="Spring Boot.OrgInterfaceApplication" />
       <item itemvalue="Spring Boot.OrgProviderApplication" />
@@ -148,7 +197,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3dc3e6f1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -159,23 +213,37 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="acbcb554-358d-48e8-867c-142fd1350428" name="Default Changelist" comment="" />
-      <created>1576996700639</created>
+      <changelist id="db3cad49-2d03-4c3c-8756-ff16be223774" name="Default Changelist" comment="" />
+      <created>1577784522392</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576996700639</updated>
-      <workItem from="1576996702147" duration="9002000" />
-      <workItem from="1577081243695" duration="5440000" />
-      <workItem from="1577106928849" duration="2387000" />
-      <workItem from="1577669604275" duration="16659000" />
-      <workItem from="1577704768769" duration="4949000" />
-      <workItem from="1577709733102" duration="735000" />
-      <workItem from="1577710477323" duration="2500000" />
-      <workItem from="1577770388004" duration="5586000" />
+      <updated>1577784522392</updated>
+      <workItem from="1577784523794" duration="3759000" />
+      <workItem from="1577929747288" duration="7593000" />
+      <workItem from="1577947724207" duration="5188000" />
+      <workItem from="1577952938885" duration="1327000" />
+      <workItem from="1577954273503" duration="273000" />
+      <workItem from="1577954552882" duration="1307000" />
+      <workItem from="1577956080369" duration="603000" />
+      <workItem from="1577956707012" duration="1222000" />
+      <workItem from="1577957941107" duration="6761000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

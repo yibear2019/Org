@@ -1,8 +1,8 @@
-package com.bearbaba.orginterface.bean;
+package com.bearbaba.orgprovider.model;
 
-import java.io.Serializable;
+import java.util.Date;
 
-public class Staff implements Serializable {
+public class Staff {
     private Long id;
 
     private String name;
@@ -18,6 +18,10 @@ public class Staff implements Serializable {
     private Boolean freeze;
 
     private String idCard;
+
+    private Date createTime;
+
+    private Date updateTime;
 
     public Long getId() {
         return id;
@@ -81,5 +85,21 @@ public class Staff implements Serializable {
 
     public void setIdCard(String idCard) {
         this.idCard = idCard == null ? null : idCard.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

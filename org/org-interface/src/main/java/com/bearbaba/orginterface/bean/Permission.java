@@ -19,6 +19,11 @@ public class Permission implements Serializable {
 	Integer id ;
 
 	/**
+	 * 权限名
+	 */
+	String permissionName;
+
+	/**
 	 * 权限码
 	 * 唯一标识一条权限
 	 */

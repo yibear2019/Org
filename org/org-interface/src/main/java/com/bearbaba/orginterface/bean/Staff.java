@@ -32,7 +32,7 @@ public class Staff implements Serializable {
 	/**
 	 * 性别
 	 */
-	String sex;
+	Boolean sex;
 
 	/**
 	 * 身份证号

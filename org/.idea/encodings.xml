@@ -5,6 +5,5 @@
     <file url="file://$PROJECT_DIR$/org-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/org-provider" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/org-provider/src/main/resources/application.yml" charset="UTF-8" />
   </component>
 </project>

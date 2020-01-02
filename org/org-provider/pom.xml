@@ -40,6 +40,8 @@
             <groupId>com.bearbaba</groupId>
             <artifactId>org-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>C:/Maven/repo/com/bearbaba/org-interface/1.0-SNAPSHOT/org-interface-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
 
         <!-- 引入spring-boot-starter以及dubbo和curator的依赖 -->
@@ -102,6 +104,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+                <-->
             </plugin>
 
             <plugin>

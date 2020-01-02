@@ -1,6 +1,6 @@
 package com.bearbaba.orgprovider.mapper;
 
-import com.bearbaba.orginterface.bean.Staff;
+import com.bearbaba.orgprovider.model.Staff;
 
 public interface StaffMapper {
     int deleteByPrimaryKey(Long id);
