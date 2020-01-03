@@ -19,7 +19,7 @@ public class StaffController {
 
 	@RequestMapping("/getStaff")
 	public Staff getStaffById(){
-		return staffService.getStaffInfo(1L);
+		return staffService.getStaffInfo(2L);
 	}
 
 	@RequestMapping("/addStaff")

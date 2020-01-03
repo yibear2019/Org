@@ -12,5 +12,7 @@
     <dubbo:protocol name="dubbo" port="20880"/>
     <dubbo:reference id="userService" check="false" interface="com.bearbaba.orginterface.service.UserService"/>
     <dubbo:reference id="staffService" check="false" interface="com.bearbaba.orginterface.service.StaffService"/>
+    <dubbo:reference id="roleService" check="false" interface="com.bearbaba.orginterface.service.RoleService"/>
+
     <dubbo:annotation package="com"/>
 </beans>
