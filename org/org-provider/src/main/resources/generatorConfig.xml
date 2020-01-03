@@ -36,9 +36,10 @@
         <table tableName="org_staff" domainObjectName="Staff" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="org_role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="org_permission" domainObjectName="Permission" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="org_role_permission_rel" domainObjectName="Role_Permission_Rel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <-->
         <!-- 待修改,重新生成的表 -->
-        <table tableName="org_role_permission_rel" domainObjectName="Role_Permission_Rel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="org_staff_role_rel" domainObjectName="StaffRoleRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
     </context>
 </generatorConfiguration>

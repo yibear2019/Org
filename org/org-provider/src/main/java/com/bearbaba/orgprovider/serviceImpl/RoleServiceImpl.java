@@ -6,17 +6,21 @@ import com.bearbaba.orgprovider.mapper.Role_Permission_RelMapper;
 import com.bearbaba.orgprovider.model.Role;
 import com.bearbaba.orgprovider.mapper.RoleMapper;
 import com.bearbaba.orgprovider.model.Role_Permission_Rel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+
 /**
  * @author YangXiong
  * @date 2020/1/2
  */
 public class RoleServiceImpl implements com.bearbaba.orginterface.service.RoleService {
+	Logger logger = LoggerFactory.getLogger(RoleServiceImpl.class);
 
 	@Autowired
 	RoleMapper roleMapper;
@@ -34,10 +38,6 @@ public class RoleServiceImpl implements com.bearbaba.orginterface.service.RoleSe
 	 */
 	@Override
 	public Integer createRole(com.bearbaba.orginterface.bean.Role role) {
-		/**
-		 * todo
-		 * 同预先处理
-		 */
 
 		Role modelRole = new Role();
 		convertToModel(role,modelRole);
@@ -47,6 +47,7 @@ public class RoleServiceImpl implements com.bearbaba.orginterface.service.RoleSe
 	private void convertToModel(com.bearbaba.orginterface.bean.Role role, Role modelRole) {
 		if(role == null || role.getOrganizationId() == null ||
 				role.getName() == null){
+			logger.info("角色创建失败,角色缺少必备属性");
 			return ;
 		}
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -75,6 +76,7 @@ public class RoleServiceImpl implements com.bearbaba.orginterface.service.RoleSe
 		Long roleId = role.getId();
 		Role domainRole = roleMapper.selectByPrimaryKey(roleId);
 		if(domainRole == null){
+			logger.info("更新角色失败,对应角色不存在");
 			return false;
 		}
 
@@ -118,9 +120,28 @@ public class RoleServiceImpl implements com.bearbaba.orginterface.service.RoleSe
 	public boolean freezeRole(Long id) {
 		Role domainRole = roleMapper.selectByPrimaryKey(id);
 		if(domainRole == null){
+			logger.info("停用角色失败,相应角色不存在");
 			return false;
 		}
 		domainRole.setFreeze((byte)0);
+		roleMapper.updateByPrimaryKey(domainRole);
+		return true;
+	}
+
+	/**
+	 * 解冻角色
+	 * 影响范围:所有授予角色的员工
+	 *
+	 * @param id
+	 * @return
+	 */
+	public boolean unfreezeRole(Long id){
+		Role domainRole = roleMapper.selectByPrimaryKey(id);
+		if(domainRole == null){
+			logger.info("启用角色失败,相应角色不存在");
+			return false;
+		}
+		domainRole.setFreeze((byte)1);
 		roleMapper.updateByPrimaryKey(domainRole);
 		return true;
 	}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bearbaba.orgprovider.mapper.StaffRoleRelMapper">
+  <resultMap id="BaseResultMap" type="com.bearbaba.orgprovider.model.StaffRoleRel">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="staff_id" jdbcType="BIGINT" property="staffId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, role_id, staff_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_staff_role_rel
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectByRoleId" resultType="com.bearbaba.orgprovider.model.StaffRoleRel">
+    select
+    <include refid="Base_Column_List" />
+    from org_staff_role_rel
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from org_staff_role_rel
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.bearbaba.orgprovider.model.StaffRoleRel">
+    insert into org_staff_role_rel (id, role_id, staff_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, #{staffId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bearbaba.orgprovider.model.StaffRoleRel">
+    insert into org_staff_role_rel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="staffId != null">
+        staff_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="staffId != null">
+        #{staffId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bearbaba.orgprovider.model.StaffRoleRel">
+    update org_staff_role_rel
+    <set>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="staffId != null">
+        staff_id = #{staffId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bearbaba.orgprovider.model.StaffRoleRel">
+    update org_staff_role_rel
+    set role_id = #{roleId,jdbcType=BIGINT},
+      staff_id = #{staffId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

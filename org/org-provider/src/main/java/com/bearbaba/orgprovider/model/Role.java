@@ -1,8 +1,9 @@
 package com.bearbaba.orgprovider.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Role {
+public class Role implements Serializable {
     private Long roleId;
 
     private String roleName;

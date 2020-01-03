@@ -1,8 +1,9 @@
 package com.bearbaba.orgprovider.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Permission {
+public class Permission implements Serializable {
     private Long permissionId;
 
     private String permissionCode;

@@ -1,8 +1,9 @@
 package com.bearbaba.orgprovider.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Role_Permission_Rel {
+public class Role_Permission_Rel implements Serializable {
     private Long id;
 
     private Long permissionId;

@@ -1,8 +1,9 @@
 package com.bearbaba.orgprovider.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Staff {
+public class Staff implements Serializable {
     private Long id;
 
     private String name;

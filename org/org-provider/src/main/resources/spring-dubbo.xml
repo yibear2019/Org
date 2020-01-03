@@ -15,8 +15,10 @@
     <dubbo:protocol name="dubbo" port="20880"/>
     <bean id="userService" class="com.bearbaba.orgprovider.serviceImpl.UserServiceImpl"/>
     <bean id="staffService" class="com.bearbaba.orgprovider.serviceImpl.StaffServiceImpl"/>
+    <bean id="roleService" class="com.bearbaba.orgprovider.serviceImpl.RoleServiceImpl"/>
 
     <dubbo:service interface="com.bearbaba.orginterface.service.UserService" ref="userService"/>
     <dubbo:service interface="com.bearbaba.orginterface.service.StaffService" ref="staffService"/>
+    <dubbo:service interface="com.bearbaba.orginterface.service.RoleService" ref="roleService"/>
 
 </beans>
